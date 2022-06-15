@@ -468,14 +468,9 @@ transition: all 0.5s ease;
 }
 
 section.tasklist{
+margin: 5% 0 0 10%;
+width: 50%;
 border: solid 0.1px rebeccapurple;
-min-height: 100%;
-width: calc(100% - 178px);
 left: 100px;
 position: relative;
-}
-.bar.active ~ section.tasklist{
-width: calc(100% - 240px);
-left: 240px;
-transition: all 0.5s ease;
 }
