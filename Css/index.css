@@ -446,3 +446,36 @@ transition: all 0.5s ease;
   opacity: 1;
   pointer-events: auto;
 }
+
+
+
+/* style when project is started */
+.started {
+    color: white;
+    font-weight: bold;
+    background: green;
+    padding: 5px;
+    border-radius: 5px;
+}
+ 
+/* style when project is completed */
+.completed {
+    color: white;
+    font-weight: bold;
+    background: greenyellow;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+section.tasklist{
+border: solid 0.1px rebeccapurple;
+min-height: 100%;
+width: calc(100% - 178px);
+left: 100px;
+position: relative;
+}
+.bar.active ~ section.tasklist{
+width: calc(100% - 240px);
+left: 240px;
+transition: all 0.5s ease;
+}

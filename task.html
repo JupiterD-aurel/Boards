@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ubiboard</title>
+<link rel="stylesheet" href="Css/index.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<!-- Css 2-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<!-- css 2 fin -->
+
+</head>
+<body>
+
+<div id="color">
+<div class="bar">
+	<div class="logo_contenu">
+		<div class="logo">
+			<i class='bx bxl-visual-studio'></i>
+				<div class="nom_logo">Ubiboard</div>
+
+		</div>
+			<i class='bx bx-menu' id="btn"></i>
+	</div>
+		<ul class="nav_list">
+<li>
+
+		<i class='bx bx-search'></i>
+		<input type="text" placeholder="Recherche...">
+</li>
+
+<li>
+		<a href="Index.html">
+		<i class='bx bxs-dashboard'></i>
+		<span class="nom_lien">Dashboard</span></a>
+</li>
+
+<li>
+		<a href="task.html">
+		<i class='bx bx-task'></i>
+		<span class="nom_lien">Task tracker</span></a>
+</li>
+
+<li>
+		<a href="#">
+		<i class='bx bx-message'></i>
+		<span class="nom_lien">Brief</span></a>
+</li>
+
+<li>
+		<a href="#">
+		<i class='bx bx-group'></i>
+		<span class="nom_lien">collab</span></a>
+</li>
+
+<li>
+		<a href="#">
+		<i class='bx bx-notepad'></i>
+		<span class="nom_lien">Facture</span></a>
+</li>
+
+<li>
+		<a href="#">
+		<i class='bx bxl-sketch'></i>
+		<span class="nom_lien">Crédits</span></a>
+</li>
+		</ul>
+
+	<div class="profil_content">
+		<div class="profile">
+			<div class="profile_details">
+				<img src="Images/avatar.jpg" alt="user">
+
+				<div class="name">Profile</div>
+			</div>
+		<button type="button" id="out"><i class='bx bx-log-out' id="log_out"></i></button>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+     
+    <!-- button to add task -->
+    <div class="row" style="margin-bottom: 50px;">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTaskModal">Add Task</button>
+        </div>
+    </div>
+ 
+</div>
+<section class="tasklist">
+<!-- modal to add project and task -->
+<div class="modal fade" id="addTaskModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Task</h5>
+                <button class="close" type="button" data-dismiss="modal">x</button>
+            </div>
+
+            <div class="modal-body">
+                <form method="POST" onsubmit="return taskObj.addTask(this);" id="form-task-hour-calculator">
+                     
+                    <!-- select project from already created -->
+                    <div class="form-group">
+                        <label>Project</label>
+                        <select name="project" id="add-task-project" class="form-control" required></select>
+                    </div>
+ 
+                    <!-- create new project -->
+                    <div class="form-group">
+                        <label>New Project</label>
+                        <input type="text" name="new_project" id="add-project" class="form-control" placeholder="Project Name">
+ 
+                        <button type="button" onclick="taskObj.addProject();" class="btn btn-primary" style="margin-top: 10px;">Add Project</button>
+                    </div>
+ 
+                    <!-- enter task -->
+                    <div class="form-group">
+                        <label>Task</label>
+                        <input type="text" name="task" class="form-control" placeholder="What are you going to do ?" required />
+                    </div>
+                </form>
+            </div>
+ 
+            <!-- form submit button -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" form="form-task-hour-calculator" class="btn btn-primary">Add Task</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- show all tasks -->
+<table class="table">
+    <caption class="text-center">All Tasks</caption>
+        <tr>
+            <th>Task</th>
+            <th>Project</th>
+            <th>Status</th>
+            <th>Duration</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+ 
+    <tbody id="all-tasks"></tbody>
+</table>
+
+<!-- form to delete project -->
+<form method="POST" onsubmit="return taskObj.deleteProject(this);" style="display: contents;">
+    <select name="project" class="form-control" style="display: initial; width: 200px; margin-left: 5px; margin-right: 5px;" id="form-task-hour-calculator-all-projects"></select>
+    <input type="submit" class="btn btn-danger" value="Delete Project">
+</form>
+</section>
+
+	<script src="Js/task.js"></script>
+	<script src="Js/script.js"></script>
+
+</body>
+
+</html>
