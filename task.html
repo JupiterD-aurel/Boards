@@ -13,7 +13,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <!-- Css 2-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
 
@@ -98,7 +97,7 @@
     <!-- button to add task -->
     <div class="row" style="margin-bottom: 50px;">
         <div class="col-md-12">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTaskModal">Add Task</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTaskModal">Ajouter tâche</button>
         </div>
     </div>
  
@@ -127,12 +126,12 @@
                         <label>New Project</label>
                         <input type="text" name="new_project" id="add-project" class="form-control" placeholder="Project Name">
  
-                        <button type="button" onclick="taskObj.addProject();" class="btn btn-primary" style="margin-top: 10px;">Add Project</button>
+                        <button type="button" onclick="taskObj.addProject();" class="btn btn-primary" style="margin-top: 10px;">Ajouter Projet</button>
                     </div>
  
                     <!-- enter task -->
                     <div class="form-group">
-                        <label>Task</label>
+                        <label>Tâche</label>
                         <input type="text" name="task" class="form-control" placeholder="What are you going to do ?" required />
                     </div>
                 </form>
@@ -140,8 +139,8 @@
  
             <!-- form submit button -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" form="form-task-hour-calculator" class="btn btn-primary">Add Task</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                <button type="submit" form="form-task-hour-calculator" class="btn btn-primary">Ajouter tâche</button>
             </div>
         </div>
     </div>
@@ -151,10 +150,10 @@
 <table class="table">
     <caption class="text-center">All Tasks</caption>
         <tr>
-            <th>Task</th>
-            <th>Project</th>
+            <th>Tâche</th>
+            <th>Projet</th>
             <th>Status</th>
-            <th>Duration</th>
+            <th>Durée</th>
             <th>Date</th>
             <th>Action</th>
         </tr>
@@ -170,25 +169,31 @@
 </section>
 
 <section id="chart">
-<div class="home_content">
+<div class="home_content2">
 
-<div class="text"><canvas id="myChart" width="200" height="200"></canvas></div>
-<div class="text"><canvas id="myChart1" width="200" height="200"></canvas></div>
-<div class="text"><canvas id="myChart2" width="200" height="200"></canvas></div>
+<div id="graph1">
+<p>En cours</p>
+<div class="text"><canvas id="myChart" width="100" height="100"></canvas></div></div>
+
+<div id="graph2">
+<p>Terminé</p>
+<div class="text"><canvas id="myChart1" width="100" height="100"></canvas></div></div>
+
+<div id="graph3">
+<p>En pause</p>
+<div class="text"><canvas id="myChart2" width="100" height="100"></canvas></div></div>
+
+<div id="graph4">
+
+<div class="text"><canvas id="myChart4" width="300" height="100"></canvas></div></div>
 
 </div>
-
-<section class="myc">
-<div class="text"><canvas id="myChart4" width="200" height="200"></canvas></div></section>
-
-
-<section class="third">
 
 
 </section>
 
 	<script src="Js/task.js"></script>
-	<script src="Js/script.js"></script>
+	<script src="Js/chart.js"></script>
 
 </body>
 

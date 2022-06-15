@@ -245,8 +245,8 @@
 
                                 // ask for confirmation
                                 swal({
-                                    title: "Are you sure?",
-                                    text: "Deleting the task will delete its hours too.",
+                                    title: "Etes-vous sûr?",
+                                    text: "La suppression de la tâche supprimera également ses heures.",
                                     icon: "warning",
                                     buttons: true,
                                     dangerMode: true,
@@ -292,8 +292,8 @@
                             } else if (self.value == "start") {
                                 // ask for confirmation
                                 swal({
-                                    title: "Are you sure?",
-                                    text: "This will start the timer.",
+                                    title: "Êtes-vous sûr?",
+                                    text: "Cela démarrera la minuterie.",
                                     icon: "warning",
                                     buttons: true,
                                     dangerMode: true,
@@ -327,8 +327,8 @@
 
                                 // ask for confirmation
                                 swal({
-                                    title: "Are you sure?",
-                                    text: "This will stop the timer.",
+                                    title: "Êtes-vous sûr?",
+                                    text: "Cela arrêtera le chronomètre.",
                                     icon: "warning",
                                     buttons: true,
                                     dangerMode: true,
@@ -383,14 +383,14 @@
 
             // check if any project is selected
             if (self.project.value == "") {
-                swal("Please select a project to delete");
+                swal("Veuillez sélectionner un projet à supprimer");
                 return false;
             }
 
             // ask for confirmation
             swal({
-                title: "Are you sure?",
-                text: "Deleting the project will delete its tasks too.",
+                title: "Etes-vous sûr?",
+                text: "La suppression du projet supprimera également ses tâches.",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,

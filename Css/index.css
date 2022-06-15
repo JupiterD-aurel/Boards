@@ -257,6 +257,49 @@ width: calc(100% - 240px);
 left: 240px;
 }
 
+/*home2*/
+
+#chart{
+background: #11101d;
+bottom: 300px;
+height: 0;
+width: 500px;
+position: relative;
+left: 1000px;
+}
+.bar.active ~ #chart{
+left: 1015px;
+transition: all 0.5s ease;
+}
+
+.home_content2{
+position: absolute;
+height: 100%;
+width: calc(100% - 178px);
+left: 178px;
+}
+
+.home_content2 .text{
+font-size: 25px;
+font-weight: 500;
+color: #1f1f31;
+margin: 12px;
+}
+
+.home_content2 #graph1{
+display: flex;
+}
+
+.home_content2 #graph2{
+display: flex;
+}
+
+.home_content2 #graph3{
+display: flex;
+}
+
+
+
 /*part2*/
 
 .home-section{
@@ -474,3 +517,5 @@ border: solid 0.1px rebeccapurple;
 left: 100px;
 position: relative;
 }
+
+
