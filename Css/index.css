@@ -260,12 +260,11 @@ left: 240px;
 /*home2*/
 
 #chart{
-background: #11101d;
-bottom: 300px;
 height: 0;
 width: 500px;
-position: relative;
+position: absolute;
 left: 1000px;
+margin-top: 3%;
 }
 .bar.active ~ #chart{
 left: 1015px;
@@ -511,11 +510,15 @@ transition: all 0.5s ease;
 }
 
 section.tasklist{
-margin: 5% 0 0 10%;
-width: 50%;
+margin: 2% 0 0 10%;
+width: calc(70% - 240px);
 border: solid 0.1px rebeccapurple;
 left: 100px;
-position: relative;
+position: absolute;
 }
 
+.bar.active section.tasklist{
+left: 240px;
+
+}
 
